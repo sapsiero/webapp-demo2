@@ -7,11 +7,8 @@ import javax.persistence.Id;
 import javax.validation.constraints.AssertFalse;
 
 /**
- * Created with IntelliJ IDEA.
- * User: tim
  * Date: 4/27/12
  * Time: 2:23 PM
- * To change this template use File | Settings | File Templates.
  */
 @Entity
 public class PersonEntity {

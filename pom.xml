@@ -70,16 +70,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.glassfish</groupId>
-                <artifactId>maven-embedded-glassfish-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <goalPrefix>glassfish</goalPrefix>
-                    <contextRoot>/myapp</contextRoot>
-                    <port>8080</port>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
