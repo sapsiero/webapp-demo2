@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Date: 4/27/12
+ Time: 2:34 PM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Simple JSF Facelets page</title>
+</h:head>
+
+<h:body>
+    <h:outputLabel value="Existing persons"/>
+    <h:dataTable value="#{personController.listAll}" var="person">
+        <h:column>
+            <f:facet name="header">
+                <h:outputLabel value="Edit"/>
+            </f:facet>
+            <h:form>
+                <h:commandButton value="Edit" action="#{personController.edit(person.id)}"/>
+            </h:form>
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputLabel value="Del"/>
+            </f:facet>
+            <h:form>
+                <h:commandButton value="Del" action="#{personController.delete(person.id)}"/>
+            </h:form>
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputLabel value="First Name"/>
+            </f:facet>
+            <h:outputLabel value="#{person.firstName}" />
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputLabel value="Last Name"/>
+            </f:facet>
+            <h:outputLabel value="#{person.name}" />
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputLabel value="Age"/>
+            </f:facet>
+            <h:outputLabel value="#{person.age}" />
+        </h:column>
+    </h:dataTable>
+    <h:form>
+        <h:commandLink value="Create New..." action="edit"/>
+    </h:form>
+</h:body>
+
+</html>
